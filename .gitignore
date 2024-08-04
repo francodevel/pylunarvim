@@ -1,4 +1,1 @@
- .lvim
- .gitignore~
- *~
-
+/home/lorien/modules/pylunarvim/lvim

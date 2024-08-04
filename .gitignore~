@@ -1,4 +1,3 @@
- *~
- .lvim
- .gitignore~
+ "lvim"
+ "*~"
 
