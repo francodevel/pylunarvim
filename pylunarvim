@@ -73,16 +73,16 @@ def rename(file_path):
     """
 
     if file_path.endswith(".py"):
-        file_path = Path(file_path)
-        file_without_suffix = file_path.with_suffix('')
-        subprocess.run(["mv", file_path, file_without_suffix])
+        current_file_path = file_path
+        new_file_path = current_file_path.with_suffix('')  # Cuts .py extension
+        subprocess.run(["mv", current_file_path, new_file_path])
 
 
 def get_arguments() -> Namespace:
     """Gets the arguments from command line, it parsers them
 
-    :param: Gets no arguments
-    :type void
+    :param: No arguments
+    :type:
     :returns: Returns a string argument for the name of the dir.
     :rtype: str
     """
@@ -165,16 +165,16 @@ def work_place_exists(work_place: str) -> bool:
         return False
 
 
-def set_working_space(folder_path: str):
+def set_working_space(work_place_path: str):
     with open("~/pylunarvim/config.txt", "w") as config:
-        config.write(folder_path)
+        config.write(work_place_path)
 
 
 def get_working_space() -> str:
     """Gets working space set by the user, the returns it
 
-    :param void
-    :type void, no arguments are given
+    :param: No arguments
+    :type:
     :returns: str with the path for the working space set by user on config.txt
     :rtype: str
     """
@@ -185,15 +185,15 @@ def get_working_space() -> str:
     return work_place
 
 
-def check_work_place(folder_path: str) -> bool:
+def check_work_place(work_place_path: str) -> bool:
     try:
-        if work_place_exists(folder_path):
+        if work_place_exists(work_place_path):
             return True
         else:
             raise Exception
 
     except Exception:
-        print("ERROR: Path to File Not Found")
+        print("ERROR: Path to Work Place Not Found")
         return False
 
 
