@@ -207,8 +207,6 @@ def run() -> None:
     :rtype: None
     """
 
-    # print(locate_file("mypy_test.py"))  # DEBUG
-
     args: Namespace = get_arguments()
 
     if not check_work_place(args.work_place):
