@@ -190,7 +190,7 @@ def check_work_place(folder_path: str) -> bool:
         if work_place_exists(folder_path):
             return True
         else:
-            raise Exception
+            raise Exception 
 
     except Exception:
         print("ERROR: Path to File Not Found")
