@@ -94,8 +94,11 @@ def get_arguments() -> Namespace:
             "and writes a python shebang at the beginning of "
             "the the file."),
         epilog="Thanks for using %(prog)s! :)")
-    parser.add_argument("--work_place", type=str)
+    
+    parser.add_argument('--getworkplace', nargs='?', const=True, type=bool, default=True)
+    parser.add_argument("--setworkplace", type=bool)
     parser.add_argument("--file", type=str)
+
     args: Namespace = parser.parse_args()
 
     if not args.file:
@@ -165,12 +168,14 @@ def work_place_exists(work_place: str) -> bool:
         return False
 
 
-def set_working_space(work_place_path: str):
+def set_work_place(work_place: str):
+    if not work_place_exists(work_place): 
+        os.makedirs(work_place)
     with open("~/pylunarvim/config.txt", "w") as config:
-        config.write(work_place_path)
+        config.write(work_place)
 
 
-def get_working_space() -> str:
+def get_work_place_settings() -> str:
     """Gets working space set by the user, the returns it
 
     :param: No arguments
@@ -186,6 +191,15 @@ def get_working_space() -> str:
 
 
 def check_work_place(work_place_path: str) -> bool:
+    """Check if work place on work_place_path exists, if so, then returns True.
+    If not, then returns False
+
+    :params work_place_path: Work place path to check 
+    :type: str
+    :returns: bool signaling that the work place is present or not
+    :rtype: bool
+    """
+
     try:
         if work_place_exists(work_place_path):
             return True
@@ -195,6 +209,13 @@ def check_work_place(work_place_path: str) -> bool:
     except Exception:
         print("ERROR: Path to Work Place Not Found")
         return False
+
+
+def get_work_place(getworkplace: bool):
+    if getworkplace:
+        work_place_settings = get_work_place_settings() 
+        print(work_place_settings)
+        sys.exit(0)
 
 
 def run() -> None:
@@ -208,12 +229,14 @@ def run() -> None:
     """
 
     args: Namespace = get_arguments()
+    
+    get_work_place(args.getworkplace)
 
     if not check_work_place(args.work_place):
         sys.exit(1)
     else:
-        set_working_space(args.work_place)
-        work_place = get_working_space()
+        set_work_place(args.setworkplace)
+        work_place = get_work_place_settings()
 
         file_path = work_place + args.file
 
