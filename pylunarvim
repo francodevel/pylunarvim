@@ -169,17 +169,14 @@ def work_place_exists(work_place: str) -> bool:
 
 
 def set_work_place(work_place: str):
-<<<<<<< HEAD
     """Writes work place on a config file for later read.
-    
-    :param work_place: Path to the existing work place 
+
+    :param work_place: Path to the existing work place
     :type work_place: str
     :returns: None, this function returns nothing
     :rtype: None
     """
-=======
->>>>>>> d96136f1444d38553b9f81bd2159a9b78c8b78c6
-    if not work_place_exists(work_place): 
+    if not work_place_exists(work_place):
         os.makedirs(work_place)
     with open("~/pylunarvim/config.txt", "w") as config:
         config.write(work_place)
@@ -204,7 +201,7 @@ def check_work_place(work_place_path: str) -> bool:
     """Check if work place on work_place_path exists, if so, then returns True.
     If not, then returns False
 
-    :params work_place_path: Work place path to check 
+    :params work_place_path: Work place path to check
     :type: str
     :returns: bool signaling that the work place is present or not
     :rtype: bool
@@ -221,9 +218,9 @@ def check_work_place(work_place_path: str) -> bool:
         return False
 
 
-def get_work_place(getworkplace: bool):
+def display_work_place(getworkplace: bool):
     if getworkplace:
-        work_place_settings = get_work_place_settings() 
+        work_place_settings = get_work_place_settings()
         print(work_place_settings)
         sys.exit(0)
 
@@ -239,8 +236,8 @@ def run() -> None:
     """
 
     args: Namespace = get_arguments()
-    
-    get_work_place(args.getworkplace)
+
+    display_work_place(args.getworkplace)
 
     if not check_work_place(args.work_place):
         sys.exit(1)
