@@ -169,6 +169,7 @@ def work_place_exists(work_place: str) -> bool:
 
 
 def set_work_place(work_place: str):
+<<<<<<< HEAD
     """Writes work place on a config file for later read.
     
     :param work_place: Path to the existing work place 
@@ -176,6 +177,8 @@ def set_work_place(work_place: str):
     :returns: None, this function returns nothing
     :rtype: None
     """
+=======
+>>>>>>> d96136f1444d38553b9f81bd2159a9b78c8b78c6
     if not work_place_exists(work_place): 
         os.makedirs(work_place)
     with open("~/pylunarvim/config.txt", "w") as config:
