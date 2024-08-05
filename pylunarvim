@@ -54,7 +54,7 @@ def lvim_editor(file_path):
 
     :param file_path: The path for the file to open with lvim
     :type file_path: str
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
@@ -68,7 +68,7 @@ def rename(file_path):
 
     :param file_path: The path for the file to rename
     :type file_path: str
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
@@ -116,7 +116,7 @@ def give_permissions(python_file: bool, file_path: str) -> None:
     :type python_file: bool
     :param file_path: File path for the file to change its exec mode
     :type file_path: str
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
@@ -129,7 +129,7 @@ def touch(file_path):
 
     :param ile_path: File path for the file to create or touch
     :type file_path: str
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
@@ -142,7 +142,7 @@ def shebang_write(file_path: str):
 
     :param file_path: File path for the file to open for writing shebang
     :type file_path: str
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
@@ -169,6 +169,13 @@ def work_place_exists(work_place: str) -> bool:
 
 
 def set_work_place(work_place: str):
+    """Writes work place on a config file for later read.
+    
+    :param work_place: Path to the existing work place 
+    :type work_place: str
+    :returns: None, this function returns nothing
+    :rtype: None
+    """
     if not work_place_exists(work_place): 
         os.makedirs(work_place)
     with open("~/pylunarvim/config.txt", "w") as config:
@@ -224,7 +231,7 @@ def run() -> None:
 
     :param void
     :type void, no arguments are given
-    :returns: None, it returns nothing
+    :returns: None, this function returns nothing
     :rtype: None
     """
 
