@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-"""Python file setter.
+"""Pylunarvim
+
+    Python file setter.
 
     This script allows the user to create a file with the python shebang:
     #!/usr/bin/env python3 line, and gives execute permissions for the users
@@ -24,6 +26,7 @@ from pathlib import Path
 import subprocess
 import sys
 
+
 default_shebang = "#!/usr/bin/env python3"
 
 
@@ -38,6 +41,14 @@ def set_shebang(shebang: str) -> None:
 
     with open('~/pylunarvim/shebang.txt', "a") as config_file:
         config_file.write(shebang)
+
+
+def source_zshrc() -> None:
+    """docstrings here"""
+    # TODO: Check for the subrocess.run return value. In a failure,
+    # must print a message.
+
+    subprocess.run(["source", '~/.zshrc'])
 
 
 def check_shebang(file_path: str) -> bool:
@@ -166,105 +177,7 @@ def shebang_write(file_path: str) -> None:
             file.write(default_shebang)
 
 
-def work_place_exists(work_place: str) -> bool:
-    """Gets file argument in file_arg variable, and locates it on file system,
-    then return the full path where is located.
-
-    :param file_arg: Relative file path argument to locate
-    :type file_arg: str
-    :returns: str with the full path of the located file
-    :rtype: str
-    """
-
-    path = Path(work_place)
-    if path.exists() and path.is_dir():
-        return True
-    else:
-        return False
-
-
-def set_work_place(work_place: str):
-    """Writes work place on a config file for later read.
-
-    :param work_place: Path to the existing work place
-    :type work_place: str
-    :returns: No return
-    :rtype: None
-    """
-
-    if not work_place_exists(work_place):
-        os.makedirs(work_place)
-    with open("~/pylunarvim/config.txt", "w") as config:
-        config.write(work_place)
-
-
-def get_work_place_settings() -> str:
-    """Gets working space set by the user, the returns it
-
-    :param: No arguments
-    :type:
-    :returns: str with the path for the working space set by user on config.txt
-    :rtype: str
-    """
-
-    with open("~/pylunarvim/config.txt", "r") as config:
-        work_place = config.readline()
-
-    return work_place
-
-
-def check_work_place(work_place_path: str) -> bool:
-    """Check if work place on work_place_path exists, if so, then returns True.
-    If not, then returns False
-
-    :params work_place_path: Work place path to check
-    :type: str
-    :returns: bool signaling that the work place is present or not
-    :rtype: bool
-    """
-
-    try:
-        if work_place_exists(work_place_path):
-            return True
-        else:
-            raise Exception
-
-    except Exception:
-        print("ERROR: Path to Work Place Not Found")
-        return False
-
-
-def display_work_place(getworkplace: bool) -> None:
-    """Reads work place settings from file.
-
-    :params getworkplace: False or True for displaying or not the settings
-    :type: bool
-    :returns: No return
-    :rtype: None
-    """
-
-    if getworkplace:
-        work_place_settings = get_work_place_settings()
-        print(work_place_settings)
-        sys.exit(0)
-
-
-def add_work_place_to_path(work_place: str) -> None:
-    """Adds work_place to the PATH variable
-
-    :params work_place: str with the path to work_place
-    :type: str
-    :returns: No return
-    :rtype: None
-    """
-
-    home = Path.home()
-    with open(str(home) + ".zshrc", "a") as zshrc_file:
-        zshrc_file.write("")
-        zshrc_file.write(f'export PATH={work_place}:$PATH')
-
-
-def run() -> None:
+def runner() -> None:
     """Executes all the processes to acomplish the task of creating a file with
     a shenbang on it and give execution permissions to file's owner
 
@@ -295,4 +208,4 @@ def run() -> None:
 
 
 if __name__ == "__main__":
-    run()
+    runner()
