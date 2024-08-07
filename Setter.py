@@ -1,0 +1,4 @@
+class Setter(object):
+    """Setter"""
+
+    
