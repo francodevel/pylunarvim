@@ -63,7 +63,8 @@ def check_shebang(file_path: str) -> bool:
 
 
 def edit(file_path: str) -> None:
-    """Gets file path to open it with lvim (Lunar Vim) editor
+    """Enters editor on file location read from file_path
+    argument
 
     :param file_path: The path for the file to edit
     :type file_path: str
