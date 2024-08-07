@@ -49,7 +49,7 @@ def check_shebang(file_path: str) -> bool:
     return False
 
 
-def lvim_editor(file_path):
+def lvim_editor(file_path) -> None:
     """Gets file path to open it with lvim (Lunar Vim)
 
     :param file_path: The path for the file to open with lvim
