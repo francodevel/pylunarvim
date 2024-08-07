@@ -30,7 +30,7 @@ default_shebang = "#!/usr/bin/env python3"
 def set_shebang(shebang: str) -> None:
     """Sets shebang on config file, for later read.
 
-    :params shebang: The shabang to set
+    :params shebang: shabang to set on config file
     :type: str
     :returns: No return
     :rtype: None
