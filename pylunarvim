@@ -74,7 +74,7 @@ def rename(file_path: str) -> None:
 
     if file_path.endswith(".py"):
         current_file_path = file_path
-        new_file_path = Path(current_file_path).with_suffix('')  # Cuts .py extension
+        new_file_path = Path(current_file_path).with_suffix('')  # cuts out .py
         subprocess.run(["mv", current_file_path, str(new_file_path)])
 
 
