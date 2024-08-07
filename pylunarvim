@@ -24,7 +24,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-shebang = "#!/usr/bin/env python3"
+default_shebang = "#!/usr/bin/env python3"
 
 
 def set_shebang(shebang: str) -> None:
