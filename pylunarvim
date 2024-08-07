@@ -291,7 +291,7 @@ def run() -> None:
         line_there: bool = check_shebang(file_path)
         give_permissions(line_there, file_path)
         rename(file_path)
-        editor(file_path)
+        edit(file_path)
 
 
 if __name__ == "__main__":
