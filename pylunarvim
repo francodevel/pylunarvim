@@ -148,8 +148,8 @@ def shebang_write(file_path: str) -> None:
     """
 
     if os.stat(file_path).st_size == 0:
-        with open(file_path, "w+") as out_file:
-            out_file.write(shebang)
+        with open(file_path, "w+") as file:
+            file.write(shebang)
 
 
 def work_place_exists(work_place: str) -> bool:
