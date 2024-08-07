@@ -52,7 +52,7 @@ def check_shebang(file_path: str) -> bool:
     try:
         with open(file_path, "r") as input_file:
             line = input_file.readline()
-            if line == shebang:
+            if line == default_shebang:
                 return True
     except IsADirectoryError as dir:
         file_path_list = file_path.split("/")
@@ -163,7 +163,7 @@ def shebang_write(file_path: str) -> None:
 
     if os.stat(file_path).st_size == 0:
         with open(file_path, "w+") as file:
-            file.write(shebang)
+            file.write(default_shebang)
 
 
 def work_place_exists(work_place: str) -> bool:
