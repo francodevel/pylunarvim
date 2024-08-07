@@ -63,7 +63,7 @@ def lvim_editor(file_path):
         subprocess.run(["lvim", file_path])
 
 
-def rename(file_path):
+def rename(file_path: str) -> None:
     """Gets file path to get the file to rename
 
     :param file_path: The path for the file to rename
@@ -74,8 +74,8 @@ def rename(file_path):
 
     if file_path.endswith(".py"):
         current_file_path = file_path
-        new_file_path = current_file_path.with_suffix('')  # Cuts .py extension
-        subprocess.run(["mv", current_file_path, new_file_path])
+        new_file_path = Path(current_file_path).with_suffix('')  # Cuts .py extension
+        subprocess.run(["mv", current_file_path, str(new_file_path)])
 
 
 def get_arguments() -> Namespace:
@@ -125,7 +125,7 @@ def give_permissions(python_file: bool, file_path: str) -> None:
         os.chmod(file_path, stat.S_IXUSR | stat.S_IRUSR | stat.S_IRWXU)
 
 
-def touch(file_path):
+def touch(file_path: str) -> None:
     """Gets file path and touches it. If the does not exist, it creates it
 
     :param ile_path: File path for the file to create or touch
@@ -137,7 +137,7 @@ def touch(file_path):
     Path(file_path).touch()
 
 
-def shebang_write(file_path: str):
+def shebang_write(file_path: str) -> None:
     """Gets file path, searches it for the files at the end of the path and
     writes a sheband in it
 
@@ -220,7 +220,7 @@ def check_work_place(work_place_path: str) -> bool:
         return False
 
 
-def display_work_place(getworkplace: bool):
+def display_work_place(getworkplace: bool) -> None:
     """Reads work place settings from file.
 
     :params getworkplace: False or True for displaying or not the settings
@@ -235,12 +235,27 @@ def display_work_place(getworkplace: bool):
         sys.exit(0)
 
 
+def add_work_place_to_path(work_place: str) -> None:
+    """Adds work_place to the PATH variable
+
+    :params work_place: str with the path to work_place
+    :type: str
+    :returns: No return
+    :rtype: None
+    """
+
+    home = Path.home()
+    with open(str(home) + ".zshrc", "a") as zshrc_file:
+        zshrc_file.write("")
+        zshrc_file.write(f'export PATH={work_place}:$PATH')
+
+
 def run() -> None:
     """Executes all the processes to acomplish the task of creating a file with
     a shenbang on it and give execution permissions to file's owner
 
-    :param:
-    :type
+    :params:
+    :type:
     :returns: No return
     :rtype: None
     """
