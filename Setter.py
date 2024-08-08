@@ -11,41 +11,7 @@ class Setter(object):
         pass
 
 
-    def set_shebang(self, shebang: str) -> None:
-        """Sets shebang on config file, for later read.
-
-        :params shebang: shabang to set on config file
-        :type: str
-        :returns: No return
-        :rtype: None
-        """
-
-        with open('~/pylunarvim/shebang.txt', "a") as config_file:
-            config_file.write(shebang)
-
-
-    def check_shebang(self, file_path: str) -> bool:
-        """Gets file path and checks shebang on the first line in file
-
-        :param file_doc: The path for for the file to check
-        :type file_path: str
-        :returns: True if shebang written in file, otherwise False
-        :rtype: bool
-        """
-
-        try:
-            with open(file_path, "r") as input_file:
-                line = input_file.readline()
-                if line == self.default_shebang:
-                    return True
-        except IsADirectoryError as dir:
-            file_path_list = file_path.split("/")
-            file = file_path_list[-1]
-            print(f"{file}: {dir.strerror}")
-
-        return False
-
-
+    
 
     def work_place_exists(self, work_place_path: str) -> bool:
         """Gets file argument in file_arg variable, and locates it on file system,

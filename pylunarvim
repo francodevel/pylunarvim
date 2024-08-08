@@ -44,7 +44,14 @@ def set_shebang(shebang: str) -> None:
 
 
 def source_zshrc() -> None:
-    """docstrings here"""
+    """Sources ~/.zshrc for the PATH variable to work.
+
+    :params:
+    :type:
+    :returns: No return
+    :rtype: None
+    """
+
     # TODO: Check for the subrocess.run return value. In a failure,
     # must print a message.
 
@@ -106,7 +113,7 @@ def rename(file_path: str) -> None:
 def get_arguments() -> Namespace:
     """Gets the arguments from command line, it parsers them
 
-    :param: No arguments
+    :params: No arguments
     :type:
     :returns: Returns a string argument for the name of the dir.
     :rtype: str
