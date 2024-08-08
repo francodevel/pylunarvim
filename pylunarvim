@@ -31,7 +31,7 @@ default_shebang = "#!/usr/bin/env python3"
 
 
 def set_shebang(shebang: str) -> None:
-    """Sets shebang on config file, for later read.
+    """Sets shebang on config file, for later read
 
     :params shebang: shabang to set on config file
     :type: str
@@ -44,7 +44,7 @@ def set_shebang(shebang: str) -> None:
 
 
 def source_zshrc() -> None:
-    """Sources ~/.zshrc for the PATH variable to work.
+    """Sources ~/.zshrc for the PATH variable to work
 
     :params:
     :type:
@@ -115,7 +115,7 @@ def get_arguments() -> Namespace:
 
     :params: No arguments
     :type:
-    :returns: Returns a string argument for the name of the dir.
+    :returns: Returns a string argument for the name of the dir
     :rtype: str
     """
 
