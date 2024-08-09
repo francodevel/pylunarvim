@@ -3,11 +3,12 @@ import os
 import sys
 
 class Setter(object):
-    """Setter"""
+    """Object that handle the settings for this tool."""
 
     default_shebang = "#!/usr/bin/env python3"
 
     def __init__(self):
+        """No initial pararameters nedeed at the moment"""
         pass
 
 
@@ -110,4 +111,3 @@ class Setter(object):
         with open(str(home) + ".zshrc", "a") as zshrc_file:
             zshrc_file.write("")
             zshrc_file.write(f'export PATH={work_place}:$PATH')
-
