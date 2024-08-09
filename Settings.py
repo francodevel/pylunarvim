@@ -13,8 +13,8 @@ class Settings(object):
         pass
 
     def work_place_exists(self, work_place_path: str) -> bool:
-        """Gets file argument in file_arg variable, and locates it on file system,
-        then return the full path where is located.
+        """Gets file argument in file_arg variable, and locates it on file
+        system, then return the full path where is located.
 
         :param file_arg: Relative file path argument to locate
         :type file_arg: str
