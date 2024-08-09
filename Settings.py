@@ -2,7 +2,8 @@ from pathlib import Path
 import os
 import sys
 
-class Setter(object):
+
+class Settings(object):
     """Object that handle the settings for this tool."""
 
     default_shebang = "#!/usr/bin/env python3"
@@ -10,9 +11,6 @@ class Setter(object):
     def __init__(self):
         """No initial pararameters nedeed at the moment"""
         pass
-
-
-    
 
     def work_place_exists(self, work_place_path: str) -> bool:
         """Gets file argument in file_arg variable, and locates it on file system,
