@@ -25,7 +25,7 @@ import stat
 from pathlib import Path
 import subprocess
 import sys
-from Setter import Setter 
+from Settings import Settings
 
 
 default_shebang = "#!/usr/bin/env python3"
