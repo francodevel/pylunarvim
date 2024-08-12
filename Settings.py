@@ -12,7 +12,6 @@ class Settings(object):
         """No initial pararameters nedeed at the moment"""
         pass
 
-
     def set_shebang(self, user_shebang: str) -> None:
         """Sets shebang on config file, for later read
 
@@ -24,8 +23,6 @@ class Settings(object):
 
         with open('~/pylunarvim/shebang.cfg', "a") as config:
             config.write(user_shebang)
-
-
 
     def work_place_exists(self, work_place_path: str) -> bool:
         """Gets file argument in file_arg variable, and locates it on file
@@ -43,7 +40,6 @@ class Settings(object):
         else:
             return False
 
-
     def set_work_place(self, work_place_path: str):
         """Writes work place on a config file for later read.
 
@@ -58,7 +54,6 @@ class Settings(object):
         with open("~/pylunarvim/config.txt", "w") as config:
             config.write(work_place_path)
 
-
     def get_work_place_settings(self) -> str:
         """Gets working space set by the user, the returns it
 
@@ -72,7 +67,6 @@ class Settings(object):
             work_place = config.readline()
 
         return work_place
-
 
     def check_work_place(self, work_place_path: str) -> bool:
         """Check if work place on work_place_path exists, if so, then returns True.
@@ -94,7 +88,6 @@ class Settings(object):
             print("ERROR: Path to Work Place Not Found")
             return False
 
-
     def display_work_place(self, getworkplace: bool) -> None:
         """Reads work place settings from file.
 
@@ -108,8 +101,6 @@ class Settings(object):
             work_place_settings = self.get_work_place_settings()
             print(work_place_settings)
             sys.exit(0)
-
-
 
     def add_work_place_to_path(self, work_place: str) -> None:
         """Adds work_place to the PATH variable
