@@ -12,6 +12,21 @@ class Settings(object):
         """No initial pararameters nedeed at the moment"""
         pass
 
+
+    def set_shebang(self, user_shebang: str) -> None:
+        """Sets shebang on config file, for later read
+
+        :param shebang: shabang to set on config file
+        :type: str
+        :returns: No return
+        :rtype: None
+        """
+
+        with open('~/pylunarvim/shebang.cfg', "a") as config:
+            config.write(shebang)
+
+
+
     def work_place_exists(self, work_place_path: str) -> bool:
         """Gets file argument in file_arg variable, and locates it on file
         system, then return the full path where is located.
