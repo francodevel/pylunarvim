@@ -6,7 +6,7 @@ import sys
 class Settings(object):
     """Object that handle the settings for this tool."""
 
-    default_shebang = "#!/usr/bin/env python3"
+    shebang = "#!/usr/bin/env python3"
 
     def __init__(self):
         """No initial pararameters nedeed at the moment"""
@@ -23,7 +23,7 @@ class Settings(object):
         """
 
         with open('~/pylunarvim/shebang.cfg', "a") as config:
-            config.write(shebang)
+            config.write(user_shebang)
 
 
 
