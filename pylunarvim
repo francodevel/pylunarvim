@@ -40,8 +40,8 @@ def set_shebang(shebang: str) -> None:
     :rtype: None
     """
 
-    with open('~/pylunarvim/shebang.txt', "a") as config_file:
-        config_file.write(shebang)
+    with open('~/pylunarvim/shebang.txt', "a") as config:
+        config.write(shebang)
 
 
 def source_zshrc() -> None:
