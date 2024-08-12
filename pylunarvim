@@ -40,7 +40,7 @@ def set_shebang(shebang: str) -> None:
     :rtype: None
     """
 
-    with open('~/pylunarvim/shebang.txt', "a") as config:
+    with open('~/pylunarvim/shebang.cfg', "a") as config:
         config.write(shebang)
 
 
