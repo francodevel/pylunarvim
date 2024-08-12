@@ -31,7 +31,7 @@ from Settings import Settings
 shebang = "#!/usr/bin/env python3"
 
 
-def set_shebang(shebang: str) -> None:
+def set_shebang(user_shebang: str) -> None:
     """Sets shebang on config file, for later read
 
     :param shebang: shabang to set on config file
