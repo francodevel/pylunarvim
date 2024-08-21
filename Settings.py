@@ -50,7 +50,9 @@ class Settings(object):
         """
 
         if not self.work_place_exists(work_place_path):
-            os.makedirs(work_place_path)
+            # os.makedirs(work_place_path)
+            print("Work place doesn't exist.")
+            sys.exit(1)
         with open("~/pylunarvim/config.txt", "w") as config:
             config.write(work_place_path)
 
