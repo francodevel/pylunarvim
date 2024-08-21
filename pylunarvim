@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Pylunarvim
+"""pylunarvim
 
     Python file setter.
 
@@ -12,7 +12,7 @@
     This script needs you to pass a file name. Like this: script.py or script.
     Works with both. And should be used like this: lvimpy --file script.
     Alternatively you can add an alias in bashrc or zshrc, depending on your
-    Linux "shell" (bash or ksh), like this:
+    Linux "shell" (bash or zsh), like this:
         alias lp='lvimpy --file'. So you can use this way: lp script
 
     You don't need to install any modules for this script to work.
@@ -53,7 +53,7 @@ def source_zshrc() -> None:
     :rtype: None
     """
 
-    # TODO: Check for the subrocess.run return value. In a failure,
+    # TODO: Check if the subrocess.run returns a value. In a failure,
     # must print a message.
 
     subprocess.run(["source", '~/.zshrc'])
@@ -197,13 +197,14 @@ def runner() -> None:
 
     args: Namespace = get_arguments()
 
-    display_work_place(args.getworkplace)
+    settings = Settings()
+    settings.display_work_place(args.getworkplace)
 
-    if not check_work_place(args.getworkplace):
+    if not settings.check_work_place(args.getworkplace):
         sys.exit(1)
     else:
-        set_work_place(args.setworkplace)
-        work_place = get_work_place_settings()
+        settings.set_work_place(args.setworkplace)
+        work_place = settings.get_work_place_settings()
 
         file_path = work_place + args.file
 

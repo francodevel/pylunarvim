@@ -59,11 +59,11 @@ class Settings(object):
 
         :param: No arguments
         :type:
-        :returns: str with the path for the working space set by user on config.txt
+        :returns: str with the path for the working space set by user on config.cfg
         :rtype: str
         """
 
-        with open("~/pylunarvim/config.txt", "r") as config:
+        with open("~/pylunarvim/config.cfg", "r") as config:
             work_place = config.readline()
 
         return work_place
