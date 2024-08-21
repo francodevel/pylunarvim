@@ -61,7 +61,8 @@ class Settings(object):
 
         :param: No arguments
         :type:
-        :returns: str with the path for the working space set by user on config.cfg
+        :returns: str with the path for the working space set by use
+        on config.cfg
         :rtype: str
         """
 
@@ -71,8 +72,8 @@ class Settings(object):
         return work_place
 
     def check_work_place(self, work_place_path: str) -> bool:
-        """Check if work place on work_place_path exists, if so, then returns True.
-        If not, then returns False
+        """Check if work place on work_place_path exists, if so, then returns
+        True. If not, then returns False
 
         :params work_place_path: Work place path to check
         :type: str
