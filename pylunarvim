@@ -31,19 +31,6 @@ from Settings import Settings
 shebang = "#!/usr/bin/env python3"
 
 
-def set_shebang(user_shebang: str) -> None:
-    """Sets shebang on config file, for later read
-
-    :param shebang: shabang to set on config file
-    :type: str
-    :returns: No return
-    :rtype: None
-    """
-
-    with open('~/pylunarvim/shebang.cfg', "a") as config:
-        config.write(shebang)
-
-
 def source_zshrc() -> None:
     """Sources ~/.zshrc for the PATH variable to work
 
