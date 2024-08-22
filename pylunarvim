@@ -2,15 +2,17 @@
 
 """pylunarvim
 
-    Python file setter.
+    You can set your python files for running them without the need of setting
+    them everytime you need to
 
-    This script allows the user to create a file with the python shebang:
-    #!/usr/bin/env python3 line, and gives execute permissions for the users
-    creator. Ready to code!? Then you can run your python file like this:
-        ./foo. Without the .py extension.
+    This script allows to write an empty file with the python shebang on it:
+    #!/usr/bin/env python3 line, and gives execute permissions for you to be
+    able to run it. Then you can run your python file like this: foo. Without
+    the .py extension and without the prefix ./ to be able to run it. All by
+    setting the --setworkplace command line argument.
 
     This script needs you to pass a file name. Like this: script.py or script.
-    Works with both. And should be used like this: lvimpy --file script.
+    Works with both. And should be used like this: pylunarvim --file script.
     Alternatively you can add an alias in bashrc or zshrc, depending on your
     Linux "shell" (bash or zsh), like this:
         alias lp='lvimpy --file'. So you can use this way: lp script
@@ -117,7 +119,10 @@ def get_arguments() -> Namespace:
 
     parser.add_argument('--getworkplace', nargs='?', const=True,
                         type=bool, default=True)
-    parser.add_argument("--setworkplace", type=str)
+
+    parser.add_argument('--setworkplace', nargs='?',
+                        type=str, default="")
+
     parser.add_argument("--file", type=str)
 
     args: Namespace = parser.parse_args()
