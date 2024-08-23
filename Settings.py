@@ -9,7 +9,7 @@ class Settings(object):
     shebang = "#!/usr/bin/env python3"
 
     def __init__(self):
-        """No initial pararameters nedeed at the moment"""
+        """No initial pararameters needed at the moment"""
         pass
 
     def set_shebang(self, user_shebang: str) -> None:
