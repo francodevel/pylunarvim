@@ -34,9 +34,7 @@ shebang = "#!/usr/bin/env python3"
 
 
 def source_zshrc() -> None:
-    """Sources ~/.zshrc. You need it to export PATH variable name
-    with the new work place you have set up with the --setworkplace
-    argument.
+    """Sources ~/.zshrc for the PATH variable to work
 
     :param:
     :type:
@@ -55,7 +53,7 @@ def check_shebang(file_path: str) -> bool:
 
     :param file_doc: The path for for the file to check
     :type file_path: str
-    :returns: True if shebang on target file, otherwise False
+    :returns: True if shebang written in file, otherwise False
     :rtype: bool
     """
 
