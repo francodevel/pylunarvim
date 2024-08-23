@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import subprocess
 
 
 class Settings(object):
@@ -117,3 +118,21 @@ class Settings(object):
         with open(str(home) + ".zshrc", "a") as zshrc_file:
             zshrc_file.write("")
             zshrc_file.write(f'export PATH={work_place}:$PATH')
+
+    def source_zshrc(self) -> None:
+        """Sources ~/.zshrc. You need it to export PATH variable name
+        with the new work place you have set up with the --setworkplace
+        argument.
+
+        :param:
+        :type:
+        :returns: No return
+        :rtype: None
+        """
+
+        # TODO: Check if the subrocess.run returns a value. In a failure,
+        # must print a message.
+
+        subprocess.run(["source", '~/.zshrc'])
+
+
