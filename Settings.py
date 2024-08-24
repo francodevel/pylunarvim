@@ -4,7 +4,7 @@ import subprocess
 
 
 class Settings(object):
-    """Object that handle the settings for this tool."""
+    """This class that manage the settings for this tool."""
 
     shebang = "#!/usr/bin/env python3"
 
