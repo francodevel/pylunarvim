@@ -134,5 +134,3 @@ class Settings(object):
         # must print a message.
 
         subprocess.run(["source", '~/.zshrc'])
-
-
