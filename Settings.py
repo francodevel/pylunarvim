@@ -6,8 +6,6 @@ import subprocess
 class Settings(object):
     """This class manages the tool settings."""
 
-    shebang = "#!/usr/bin/env python3"
-
     def __init__(self):
         """No initial pararameters needed at the moment"""
         pass
