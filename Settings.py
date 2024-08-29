@@ -1,6 +1,7 @@
 from pathlib import Path
 import sys
 import subprocess
+import os
 
 
 class Settings(object):
@@ -47,10 +48,9 @@ class Settings(object):
         :rtype: None
         """
 
-        if not self.work_place_exists(work_place_path):
-            # os.makedirs(work_place_path)
-            print("Work place doesn't exist.")
-            sys.exit(1)
+        if self.work_place_exists(work_place_path):
+            home = Path.home()
+            os.makedirs(str(home) + "pylunarvim")
         with open("~/pylunarvim/config.cfg", "w") as config:
             config.write(work_place_path)
 
@@ -66,6 +66,10 @@ class Settings(object):
 
         with open("~/pylunarvim/config.cfg", "r") as config:
             work_place = config.readline()
+            if not work_place:
+                print("Work place is unset.\n"
+                      "pylunarvim -h for more help.")
+                sys.exit(1)
 
         return work_place
 

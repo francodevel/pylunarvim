@@ -112,10 +112,10 @@ def get_arguments() -> Namespace:
 
     args: Namespace = parser.parse_args()
 
-    if not args.file:
-        print("Usage: pylunarvim --file <file>."
-              "pylunarvim -h for more help.")
-        parser.exit(1)
+    #if not args.file:
+    #    print("Usage: pylunarvim --file <file>.\n"
+    #          "pylunarvim -h for more help.")
+    #    parser.exit(1)
 
     return args
 
