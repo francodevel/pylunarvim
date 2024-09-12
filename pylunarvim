@@ -114,7 +114,7 @@ def get_arguments() -> Namespace:
 
     args: Namespace = parser.parse_args()
 
-    #if not args.file:
+    # if not args.file:
     #    print("Usage: pylunarvim --file <file>.\n"
     #          "pylunarvim -h for more help.")
     #    parser.exit(1)
@@ -141,7 +141,7 @@ def give_permissions(python_file: bool, file_path: str) -> None:
 def touch(file_path: str) -> None:
     """Gets file path and touches it. If the does not exist, it creates it
 
-    :param ile_path: File path for the file to create or touch
+    :param file_path: File path for the file to create or touch
     :type file_path: str
     :returns: No return
     :rtype: None
