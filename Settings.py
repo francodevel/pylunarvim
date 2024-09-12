@@ -90,7 +90,7 @@ class Settings(object):
                 raise Exception
 
         except Exception:
-            print("ERROR: Path to Work Place Not Found")
+            print("ERROR: Path to work place not found")
             return False
 
     def display_work_place(self, getworkplace: bool) -> None:
