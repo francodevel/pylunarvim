@@ -54,7 +54,7 @@ class Settings(object):
         with open("~/pylunarvim/config.cfg", "w") as config:
             config.write(work_place_path)
 
-    def get_work_place_settings(self) -> str:
+    def get_work_place(self) -> str:
         """Gets working space set by the user, the returns it
 
         :param: No arguments
