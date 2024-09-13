@@ -184,7 +184,7 @@ def main() -> None:
         sys.exit(1)
     else:
         settings.set_work_place(args.setworkplace)
-        work_place = settings.get_work_place_settings()
+        work_place = settings.get_work_place()
 
         file_path = work_place + args.file
 

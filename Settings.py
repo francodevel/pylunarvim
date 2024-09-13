@@ -103,7 +103,7 @@ class Settings(object):
         """
 
         if getworkplace:
-            work_place_settings = self.get_work_place_settings()
+            work_place_settings = self.get_work_place()
             print(work_place_settings)
             sys.exit(0)
 
