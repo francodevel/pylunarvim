@@ -103,8 +103,8 @@ class Settings(object):
         """
 
         if getworkplace:
-            work_place_settings = self.get_work_place_settings()
-            print(work_place_settings)
+            work_place = self.get_work_place()
+            print(work_place)
             sys.exit(0)
 
     def add_work_place_to_path(self, work_place: str) -> None:
