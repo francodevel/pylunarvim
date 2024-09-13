@@ -64,8 +64,8 @@ class Settings(object):
         :rtype: str
         """
 
-        with open("~/pylunarvim/config.cfg", "r") as config:
-            work_place = config.readline()
+        with open("~/pylunarvim/config.cfg", "r") as config_file:
+            work_place = config_file.readline()
             if not work_place:
                 print("Work place is unset.\n"
                       "pylunarvim -h for more help.")
