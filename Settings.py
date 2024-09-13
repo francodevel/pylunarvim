@@ -51,8 +51,8 @@ class Settings(object):
         if self.work_place_exists(work_place_path):
             home = Path.home()
             os.makedirs(str(home) + "pylunarvim")
-        with open("~/pylunarvim/config.cfg", "w") as config:
-            config.write(work_place_path)
+        with open("~/pylunarvim/config.cfg", "w") as config_file:
+            config_file.write(work_place_path)
 
     def get_work_place(self) -> str:
         """Gets working space set by the user, the returns it
