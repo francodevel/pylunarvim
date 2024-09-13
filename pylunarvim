@@ -190,10 +190,10 @@ def main() -> None:
 
         file_path = work_place + args.file
 
-        touch(file_path):
+        touch(file_path)
         shebang_write(file_path)
         shebang_present: bool = check_shebang(file_path)
-        give_permissions(line_there, file_path)
+        give_permissions(shebang_present, file_path)
         rename(file_path)
         edit(file_path)
 
