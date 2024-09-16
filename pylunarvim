@@ -196,7 +196,7 @@ def main() -> None:
         give_permissions(shebang_present, file_path)
         rename(file_path)
         edit(file_path)
-
+        # print('~hello world!~*-.*~.')
 
 if __name__ == "__main__":
     main()
